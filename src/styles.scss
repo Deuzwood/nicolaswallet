@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    @apply bg-secondary;
+    @apply h-full;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary;
+  }
+}
