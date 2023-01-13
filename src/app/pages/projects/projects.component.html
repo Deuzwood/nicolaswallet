@@ -1,0 +1,41 @@
+<div class="container mx-auto p-8 flex flex-col gap-4">
+  <div>
+    <h1 class="text-2xl font-semibold">Projets</h1>
+    <p class="text-lg items-center">Voici une liste de projets que j'ai réalisés ou auxquels j'ai
+      participé, dans le cadre de mes études ou sur mon temps libre.</p>
+  </div>
+
+  <div class="flex flex-col gap-6">
+    <div *ngFor="let project of projects"
+      class="border-2 border-gray-200 rounded-lg flex gap-4 items-center odd:justify-between odd:pl-4 odd:flex-row-reverse">
+
+      <img [src]="getImagePath(project.name)" alt="{{ project.name }}"
+        class="w-auto h-48 rounded-lg">
+      <div class="flex flex-col gap-y-2">
+        <h2 class="text-xl font-semibold">{{ project.name }}</h2>
+        <p class="text-lg items-center">{{ project.description }}</p>
+        <div class="flex gap-2" *ngIf="project.links">
+          <a *ngFor="let link of project.links" [href]="link" target="_blank"
+            class="text-sm underline hover:border-b hover:border-primary hover:text-primary">
+            {{link.split('/')[2]}}
+          </a>
+        </div>
+
+        <div *ngIf="project.tags">
+          <span *ngFor="let tag of project.tags"
+            class="text-sm px-2 mr-2 text-gray-200 rounded-full border-2 badge-{{ getTagColor(tag) }}">
+            {{ getTag(tag).name }}
+          </span>
+
+          <div class="flex flex-col">
+            <p class="text-sm text-gray-200">
+              {{ project.date | date: 'MMMM yyyy' }}
+            </p>
+            <p class="text-sm text-gray-200">
+              {{ project.maintained ? 'Maintenu' : 'Non maintenu' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
