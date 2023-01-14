@@ -8,4 +8,7 @@ I'm using Angular and TailwindCSS.
 ## To do
 
 - [ ] Add localization
-- [ ] Add projects
+- [x] Add projects
+- [ ] Improve navigation design
+- [ ] Use particles.js like the old website
+- [ ] Improve tags (components)

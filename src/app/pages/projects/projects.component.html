@@ -7,35 +7,46 @@
 
   <div class="flex flex-col gap-6">
     <div *ngFor="let project of projects"
-      class="border-2 border-gray-200 rounded-lg flex gap-4 items-center odd:justify-between odd:pl-4 odd:flex-row-reverse">
-
-      <img [src]="getImagePath(project.name)" alt="{{ project.name }}"
-        class="w-auto h-48 rounded-lg">
-      <div class="flex flex-col gap-y-2">
-        <h2 class="text-xl font-semibold">{{ project.name }}</h2>
-        <p class="text-lg items-center">{{ project.description }}</p>
-        <div class="flex gap-2" *ngIf="project.links">
-          <a *ngFor="let link of project.links" [href]="link" target="_blank"
-            class="text-sm underline hover:border-b hover:border-primary hover:text-primary">
-            {{link.split('/')[2]}}
-          </a>
+      class="max-w-md mx-auto border-2 border-white rounded-xl shadow-md overflow-hidden md:max-w-full md:w-full">
+      <div class="md:flex">
+        <div class="md:shrink-0">
+          <img class="h-64 w-full object-cover md:h-full md:w-64" [src]="getImagePath(project.name)"
+            alt="{{ project.name }}">
         </div>
+        <div class="p-8 w-full">
+          <div class="uppercase tracking-wide text-sm text-primary font-semibold">{{ project.name }}
+          </div>
+          <p class="block mt-1 text-lg leading-tight font-medium">{{
+            project.description }}</p>
+          <p class="mt-2 text-slate-400">
+          <div class="flex gap-2" *ngIf="project.links">
+            <a *ngFor="let link of project.links" [href]="link" target="_blank"
+              class="text-sm underline hover:border-b hover:border-primary hover:text-primary">
+              {{link.split('/')[2]}}
+            </a>
+          </div>
 
-        <div *ngIf="project.tags">
-          <span *ngFor="let tag of project.tags"
-            class="text-sm px-2 mr-2 text-gray-200 rounded-full border-2 badge-{{ getTagColor(tag) }}">
-            {{ getTag(tag).name }}
-          </span>
+          <div class="lg:flex lg:justify-between lg:items-center mt-2">
+            <div *ngIf="project.tags">
+              <span *ngFor="let tag of project.tags"
+                class="text-sm px-2 mr-2 rounded-full border-2 badge-{{ getTagColor(tag) }}">
+                {{ getTag(tag).name }}
+              </span>
 
-          <div class="flex flex-col">
-            <p class="text-sm text-gray-200">
-              {{ project.date | date: 'MMMM yyyy' }}
-            </p>
-            <p class="text-sm text-gray-200">
-              {{ project.maintained ? 'Maintenu' : 'Non maintenu' }}
-            </p>
+              <div class="flex flex-col">
+
+              </div>
+            </div>
+            <div class="flex gap-2">
+
+              <p class="text-sm text-slate-300">
+                {{ project.date | date: 'MMMM yyyy' }}
+                - {{ project.maintained ? 'Maintenu' : 'Non maintenu' }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

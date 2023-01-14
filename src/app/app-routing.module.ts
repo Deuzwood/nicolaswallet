@@ -4,8 +4,15 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 
 const routes: Routes = [
-  { path: '', component: ResumeComponent, pathMatch: 'full' },
-  { path: 'projects', component: ProjectsComponent },
+  {
+    path: '',
+    component: ResumeComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+  },
 ];
 
 @NgModule({
