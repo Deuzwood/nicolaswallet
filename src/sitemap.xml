@@ -4,11 +4,13 @@
 		<loc>https://nicolaswallet.fr/</loc>
 		<lastmod>2023-01-13</lastmod>
 		<priority>1</priority>
-   </url>
+		<changefreq>yearly</changefreq>
+	</url>
 
-   	<url>
+	<url>
 		<loc>https://nicolaswallet.fr/projects</loc>
 		<lastmod>2023-01-13</lastmod>
 		<priority>1</priority>
-   </url>
+		<changefreq>monthly</changefreq>
+	</url>
 </urlset> 
