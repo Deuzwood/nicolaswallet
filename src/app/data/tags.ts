@@ -125,4 +125,19 @@ export const tags = [
     description: '',
     link: 'https://www.heroku.com/',
   },
+  {
+    name: 'Ulco',
+    description: "Université du Littoral Côte d'Opale",
+    link: 'https://www.univ-littoral.fr/',
+  },
+  {
+    name: 'mongoDB',
+    description: 'Système de gestion de base de données orienté documents',
+    link: 'https://www.mongodb.com/',
+  },
+  {
+    name: 'Crowdin',
+    description: 'Plateforme de traduction collaborative',
+    link: 'https://crowdin.com/',
+  },
 ];

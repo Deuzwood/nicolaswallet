@@ -29,11 +29,11 @@ export const projects: Project[] = [
   },
   {
     date: '2020-06-01T00:00:00.000Z',
-    tags: ['nodejs', 'ejs', 'threejs', 'socket.io'],
+    tags: ['nodejs', 'ejs', 'threejs', 'socket.io', 'ulco'],
     maintained: false,
     name: 'Flight Fighter',
     description: 'Jeu avec Three.JS et Socket.io()',
-    links: [''],
+    links: [],
   },
   {
     date: '2020-12-01T00:00:00.000Z',
@@ -45,7 +45,14 @@ export const projects: Project[] = [
   },
   {
     date: '2021-01-01T00:00:00.000Z',
-    tags: ['nodejs', 'api decathlon', 'api google', 'netlify', 'heroku'],
+    tags: [
+      'nodejs',
+      'api decathlon',
+      'api google',
+      'netlify',
+      'heroku',
+      'ulco',
+    ],
     maintained: false,
     name: 'VitAgility',
     description: 'Projet du module Agility. Groupe de 4 sur 3 jours ',
@@ -53,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     date: '2021-06-01T00:00:00.000Z',
-    tags: ['mongodb', 'react', 'api spotify', 'netlify'],
+    tags: ['mongodb', 'react', 'api spotify', 'netlify', 'ulco'],
     maintained: false,
     name: 'Soundify',
     description:
@@ -71,7 +78,7 @@ export const projects: Project[] = [
   },
   {
     date: '2020-04-01T00:00:00.000Z',
-    tags: ['nodejs', 'ejs', 'threejs', 'socket.io'],
+    tags: ['nodejs', 'ejs', 'threejs', 'socket.io', 'ulco'],
     links: [
       'https://github.com/Deuzwood/vroom',
       'https://l3-ig.herokuapp.com/',
@@ -94,7 +101,7 @@ export const projects: Project[] = [
   {
     date: '2019-10-01T00:00:00.000Z',
     tags: ['nodejs', 'alexaskill'],
-    links: [''],
+    links: [],
     maintained: false,
     name: 'Velin Calais',
     description:

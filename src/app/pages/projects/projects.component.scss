@@ -1,108 +1,79 @@
+@use 'sass:color';
+@use 'sass:math';
+@function luminance($color) {
+  $colors: (
+      'red': red($color),
+      'green': green($color),
+      'blue': blue($color)
+  );
 
-.badge-nodejs {
-  background-color: #92c542;
+  @each $name, $value in $colors {
+      $adjusted: 0;
+      $value: math.div($value, 255);
+      @if $value < 0.03928 {
+          $value: math.div($value, 12.92);
+      } @else {
+          $value: math.div(($value + .055), 1.055);
+          $value: math.pow($value, 2.4);
+      }
+      $colors: map-merge($colors, ($name: $value));
+  }
+
+  @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
+}
+span[class^="badge-"] {
+  @apply text-xs inline-block font-semibold py-1 px-2 rounded border;
 }
 
-.badge-php {
-  background-color: #6082bb;
+$badge-background: (
+  nodejs: #92c542,
+  php: #6082bb,
+  socketio: black,
+  threejs: #007200,
+  html: #f16625,
+  css: #0645ad,
+  apitwitch: #9147fe,
+  apichesscom: #4e7838,
+  postgresql: #336791,
+  javascript: #f7e018,
+  ulco: #005796,
+  mysql: #00758f,
+  aws: #ff9900,
+  apidecathlon: #007dbc,
+  apigoogle: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335),
+  react: #61dafb,
+  netlify: #00c7b7,
+  firebase: #ffa000,
+  vuejs: #35495e,
+  angular: #dd1b16,
+  tailwindcss: #06b6d4,
+  sass: #c69,
+  bootstrap: #563d7c,
+  apispotify: #1db954,
+  heroku: #6567a5,
+  crowdin: white,
+  mongodb: #589636,
+);
+
+@each $name, $color in $badge-background {
+
+  .badge-#{$name} {
+    background: $color;
+    // set color depending on background
+    @if $name == 'apigoogle' {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    } 
+    @else {
+      @if luminance($color) > 0.179 {
+        color: #000;
+      } @else {
+        color: #fff;
+      }
+    }
+  }
 }
 
-.badge-socketio {
-  border-color: black;
-}
 
-.badge-threejs {
-  border-color: #007200;
-}
 
-.badge-html {
-  background-color: #f16625;
-}
-
-.badge-css {
-  background-color: #0645ad;
-}
-
-.badge-apitwitch {
-  color: black;
-  border-color: #9147fe;
-}
-
-.badge-apichesscom {
-  color: black;
-  border-color: #4e7838;
-}
-
-.badge-postgresql {
-  background-color: #336791;
-}
-
-.badge-javascript {
-  color: black;
-  background-color: #f7e018;
-}
-
-.badge-ulco {
-  background-color: #005796;
-}
-
-.badge-mysql {
-  background-color: #4479a1;
-}
-
-.badge-aws {
-  border-color: #ff9900;
-  color: black;
-}
-
-.badge-apidecathlon {
-  background-color: #007dbc;
-}
-
-.badge-apigoogle {
-  background: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
-}
-
-.badge-react {
-  background-color: #16181d;
-  color: #61dafb;
-}
-
-.badge-netlify {
-  border-color: #00c7b7;
-}
-
-.badge-firebase {
-  border-color: #2C384A;
-  color:  #FFA000;
-}
-
-.badge-vuejs {
-  background-color: #35495e;
-  color: #42b883;
-}
-
-.badge-angular {
-  background-color: #dd1b16;
-}
-
-.badge-tailwindcss {
-  background-color: #06b6d4;
-  color: black;
-}
-
-.badge-sass {
-  background-color: #c69;
-}
-
-.badge-bootstrap {
-  background-color: #563d7c;
-}
-
-.badge-apispotify {
-  background-color: #1db954;
-}
-
-.badge-heroku {
-  background-color: #6567a5;
-}
