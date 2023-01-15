@@ -17,3 +17,4 @@ This is a list of things I want to do on this website:
   - [ ] Make them clickable
   - [ ] Use components for tags
   - [x] Use scss for tags
+- [ ] Add icons for projects (date, is open source, etc.)

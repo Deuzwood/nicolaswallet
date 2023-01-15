@@ -55,7 +55,7 @@ export const projects: Project[] = [
     ],
     maintained: false,
     name: 'VitAgility',
-    description: 'Projet du module Agility. Groupe de 4 sur 3 jours ',
+    description: 'Projet du module agile. Groupe de 4 sur 3 jours ',
     links: ['https://github.com/HuyghesAntoine/vitagility'],
   },
   {
@@ -79,10 +79,7 @@ export const projects: Project[] = [
   {
     date: '2020-04-01T00:00:00.000Z',
     tags: ['nodejs', 'ejs', 'threejs', 'socket.io', 'ulco'],
-    links: [
-      'https://github.com/Deuzwood/vroom',
-      'https://l3-ig.herokuapp.com/',
-    ],
+    links: ['https://github.com/Deuzwood/vroom'],
     maintained: false,
     name: 'Vroom',
     description: 'Petit jeu de voiture avec Three.JS et Socket.io()',
