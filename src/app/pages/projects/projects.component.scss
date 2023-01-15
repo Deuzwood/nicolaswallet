@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use 'sass:math';
+
 @function luminance($color) {
   $colors: (
       'red': red($color),
@@ -20,9 +21,6 @@
   }
 
   @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
-}
-span[class^="badge-"] {
-  @apply text-xs inline-block font-semibold py-1 px-2 rounded border;
 }
 
 $badge-background: (
@@ -55,6 +53,11 @@ $badge-background: (
   mongodb: #589636,
 );
 
+
+span[class^="badge-"] {
+  @apply text-xs inline-block font-semibold py-1 px-2 rounded border;
+}
+
 @each $name, $color in $badge-background {
 
   .badge-#{$name} {
@@ -74,6 +77,3 @@ $badge-background: (
     }
   }
 }
-
-
-
