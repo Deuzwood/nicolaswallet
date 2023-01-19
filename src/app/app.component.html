@@ -1,6 +1,7 @@
 <nav
   class="text-white container flex flex-row gap-x-8 items-center p-4 mx-auto border-b-2 border-primary">
-  <a routerLink="/" routerLinkActive="active" class="text-lg">Accueil</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+    class="text-lg">Accueil</a>
   <a routerLink="/projects" routerLinkActive="active" class="text-lg">Projets</a>
 </nav>
 

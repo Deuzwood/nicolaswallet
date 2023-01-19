@@ -1,3 +1,7 @@
 nav a {
-  @apply hover:text-primary;
+  @apply hover:text-slate-300;
+
+  &.active {
+    @apply text-primary;
+  }
 }
