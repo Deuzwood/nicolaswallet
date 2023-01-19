@@ -10,8 +10,10 @@
       class="max-w-md mx-auto border-2 border-white rounded-xl shadow-md overflow-hidden md:max-w-full md:w-full">
       <div class="md:flex">
         <div class="md:shrink-0">
-          <img class="h-64 w-full object-cover md:h-full md:w-64 lg:w-96 md:border-r-2"
-            [src]="getImagePath(project.name)" alt="{{ project.name }}">
+          <img
+            class="h-64 w-full object-cover md:h-full md:w-64 lg:w-96 md:border-r-2 cursor-pointer hover:opacity-75 hover:shadow-lg"
+            [src]="getImagePath(project.name)" (click)="selectProject(project)"
+            alt="{{ project.name }}">
         </div>
 
         <div class="p-8 w-full ">
@@ -50,5 +52,27 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="fixed z-10 top-0 left-0 w-full h-full bg-black bg-opacity-50
+" *ngIf="selectedProject" (click)="unselectProject()">
+  <div class="bg-slate-800 rounded-md border-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+  " (click)="$event.stopPropagation()">
+
+    <div class="flex justify-between p-2 align-top">
+      <h1 class="text-2xl font-semibold pl-2">{{ selectedProject.name }}</h1>
+      <button (click)="selectedProject = null">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <img class="border-t-2" [src]="getImagePath(selectedProject.name)"
+      alt="{{ selectedProject.name }}">
   </div>
 </div>

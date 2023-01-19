@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { projects } from 'src/app/data/projects';
 import { tags } from 'src/app/data/tags';
+import { Project } from 'src/app/interfaces/project';
 import { Tag } from 'src/app/interfaces/tag';
 
 @Component({
@@ -11,6 +12,7 @@ import { Tag } from 'src/app/interfaces/tag';
 export class ProjectsComponent implements OnInit {
   projects = projects;
   tags = tags;
+  selectedProject: Project | null = null;
 
   constructor() {}
 
@@ -37,5 +39,15 @@ export class ProjectsComponent implements OnInit {
           tag.toLowerCase().replace(/ /g, '')
       ) || ({ name: tag } as Tag)
     );
+  }
+
+  selectProject(project: Project): void {
+    this.selectedProject = project;
+    document.body.style.overflow = 'hidden';
+  }
+
+  unselectProject(): void {
+    this.selectedProject = null;
+    document.body.style.overflow = 'auto';
   }
 }
