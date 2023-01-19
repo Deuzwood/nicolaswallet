@@ -9,7 +9,6 @@
   );
 
   @each $name, $value in $colors {
-      $adjusted: 0;
       $value: math.div($value, 255);
       @if $value < 0.03928 {
           $value: math.div($value, 12.92);
