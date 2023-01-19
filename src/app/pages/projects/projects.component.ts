@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   getImagePath(name: string): string {
-    return `assets/projects/${name.toLowerCase().replace(/ /g, '_')}.png`;
+    return `assets/projects/${name.toLowerCase().replace(/ /g, '_')}.webp`;
   }
 
   getTag(tag: string): Tag {
