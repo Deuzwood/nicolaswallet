@@ -1,9 +1,11 @@
-<nav
-  class="text-white container flex flex-row gap-x-8 items-center p-4 mx-auto border-b-2 border-primary">
-  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-    class="text-lg">Accueil</a>
-  <a routerLink="/projects" routerLinkActive="active" class="text-lg">Projets</a>
-</nav>
+<div class="flex w-full border-b-2 border-primary bg-slate-800">
+  <nav
+    class="text-white container flex flex-row gap-x-8 items-center p-4 mx-auto">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+      class="text-lg">Accueil</a>
+    <a routerLink="/projects" routerLinkActive="active" class="text-lg">Projets</a>
+  </nav>
+</div>
 
 <main class="flex-1 text-white">
   <router-outlet></router-outlet>
@@ -11,7 +13,7 @@
 
 <footer class="flex border-t-2 border-primary bg-slate-800 p-4 w-full">
   <div class="container mx-auto">
-    <div class="flex gap-4 justify-end mr-6">
+    <div class="flex gap-4 justify-end">
       <a href="https://www.linkedin.com/in/nicolas-wallet/" target="_blank">
         <svg class="fill-gray-300" width="25px" role="img" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">
