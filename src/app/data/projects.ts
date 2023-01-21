@@ -20,7 +20,7 @@ export const projects: Project[] = [
   },
   {
     date: '2019-09-01T00:00:00.000Z',
-    tags: ['nodejs', 'ejs', 'bootstrap', 'sass'],
+    tags: ['nodejs', 'Express', 'ejs', 'bootstrap', 'sass'],
     maintained: false,
     name: 'Site perso',
     description:

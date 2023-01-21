@@ -17,28 +17,13 @@ export class ProjectsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // order projects by date.date
     this.projects.sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     });
   }
 
-  getTagColor(tag: string): string {
-    return tag.toLowerCase().replace(/ /g, '');
-  }
-
   getImagePath(name: string): string {
     return `assets/projects/${name.toLowerCase().replace(/ /g, '_')}.webp`;
-  }
-
-  getTag(tag: string): Tag {
-    return (
-      this.tags.find(
-        (t) =>
-          t.name.toLowerCase().replace(/ /g, '') ===
-          tag.toLowerCase().replace(/ /g, '')
-      ) || ({ name: tag } as Tag)
-    );
   }
 
   selectProject(project: Project): void {

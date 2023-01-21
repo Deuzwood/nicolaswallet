@@ -53,7 +53,9 @@
         2022</small>
       <p class="font-semibold">Sogeti</p>
       <p class="ml-4">Consultant Applications</p>
-      <p class="ml-4">Thechnologies utilisées : Angular, Java, Spring, PostgreSQL, Keycloak</p>
+      <p class="ml-4"> 
+        <app-badge *ngFor="let tech of ['Angular', 'Java', 'Spring', 'PostgreSQL', 'Keycloak']" [name]="tech"></app-badge>
+      </p>
     </div>
 
     <div class="px-2"><small class="float-right uppercase">début avril
@@ -61,7 +63,9 @@
       </small>
       <p class="font-semibold">Sogeti</p>
       <p class="ml-4">Stage de fin d'étude</p>
-      <p class="ml-4">Thechnologies utilisées : Angular, Ionic, Java, Spring</p>
+      <p class="ml-4">
+        <app-badge *ngFor="let tech of ['Angular', 'Ionic', 'Java', 'Spring']" [name]="tech"></app-badge>
+      </p>
     </div>
   </div>
   <div>

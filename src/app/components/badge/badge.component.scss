@@ -1,0 +1,83 @@
+@use 'sass:color';
+@use 'sass:math';
+
+@function luminance($color) {
+  $colors: (
+      'red': red($color),
+      'green': green($color),
+      'blue': blue($color)
+  );
+
+  @each $name, $value in $colors {
+      $value: math.div($value, 255);
+      @if $value < 0.03928 {
+          $value: math.div($value, 12.92);
+      } @else {
+          $value: math.div(($value + .055), 1.055);
+          $value: math.pow($value, 2.4);
+      }
+      $colors: map-merge($colors, ($name: $value));
+  }
+
+  @return (map-get($colors, 'red') * 0.2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
+}
+
+$badge-background: (
+  alexaskill: #31c4f3,
+  angular: #dd1b16,
+  apichesscom: #4e7838,
+  apidecathlon: #007dbc,
+  apigoogle: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335),
+  apispotify: #1db954,
+  apitwitch: #9147fe,
+  aws: #ff9900,
+  bootstrap: #563d7c,
+  crowdin: white,
+  css: #0645ad,
+  firebase: #ffa000,
+  heroku: #6567a5,
+  html: #f16625,
+  ionic: #3880ff,
+  java: #007396,
+  javascript: #f7e018,
+  keycloak: #dedede,
+  mongodb: #589636,
+  mysql: #00758f,
+  netlify: #00c7b7,
+  nodejs: #92c542,
+  php: #6082bb,
+  postgresql: #336791,
+  react: #61dafb,
+  sass: #c69,
+  socketio: black,
+  spring: #6db33f,
+  tailwindcss: #06b6d4,
+  threejs: #007200,
+  ulco: #005796,
+  vuejs: #35495e,
+);
+
+
+span[class^="badge-"] {
+  @apply text-xs inline-block font-semibold py-1 px-2 rounded border;
+}
+
+@each $name, $color in $badge-background {
+
+  .badge-#{$name} {
+    background: $color;
+    // set color depending on background
+    @if $name == 'apigoogle' {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    } 
+    @else {
+      @if luminance($color) > 0.179 {
+        color: #000;
+      } @else {
+        color: #fff;
+      }
+    }
+  }
+}
