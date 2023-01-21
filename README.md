@@ -1,4 +1,4 @@
-# Nicolas Wallet Website
+# My Website
 
 This is the source code for my website, [nicolaswallet.fr](https://nicolaswallet.fr).
 This is a simple static personal website with my resume.
