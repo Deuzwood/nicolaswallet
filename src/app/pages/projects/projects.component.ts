@@ -1,13 +1,24 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { projects } from 'src/app/data/projects';
 import { tags } from 'src/app/data/tags';
 import { Project } from 'src/app/interfaces/project';
-import { Tag } from 'src/app/interfaces/tag';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(100, style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class ProjectsComponent implements OnInit {
   projects = projects;

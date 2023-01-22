@@ -9,6 +9,9 @@ module.exports = {
         "primary": "#e5af48",
         "secondary": "#1c162b",
       },
+      transitionProperty: {
+        "size": "width, height",
+      },
     },
   },
   plugins: [],
