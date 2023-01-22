@@ -32,7 +32,7 @@ export const projects: Project[] = [
     tags: ['nodejs', 'ejs', 'threejs', 'socket.io', 'ulco'],
     maintained: false,
     name: 'Flight Fighter',
-    description: 'Jeu avec Three.JS et Socket.io()',
+    description: 'Jeu avec Three.JS et Socket.io(). Jeu de combat arcade aérien.',
     links: [],
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     maintained: false,
     name: 'Soundify',
     description:
-      "Réseau Social basé du l'API de Spotify. Groupe de 4 sur 3 semaines.",
+      "Réseau Social basé sur l'API de Spotify. Similaire à Soundcloud, vous pouvez partager vos playlists, vos titres préférés, vos artistes préférés, suivre vos amis, et commenter ou réagir à leurs publications. Groupe de 4 sur 3 semaines.",
     links: ['https://sound-ify.netlify.app/'],
   },
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     links: ['https://github.com/Deuzwood/vroom'],
     maintained: false,
     name: 'Vroom',
-    description: 'Petit jeu de voiture avec Three.JS et Socket.io()',
+    description: 'Petit jeu de voiture avec Three.JS et Socket.io(). Il est aussi possible de créer ses propres cartes via un éditeur, et chaque carte dispose d’un salon afin de pouvoir jouer avec ses amis.',	
   },
   {
     date: '2021-09-01T00:00:00.000Z',
