@@ -16,7 +16,24 @@
 </head>
 
 <body>
-  <app-root class="flex flex-col min-h-screen"></app-root>
+  <noscript class="h-screen w-screen flex flex-col justify-center items-center text-white">
+    <style>
+      .noscript\:hidden {
+        display: none;
+      }
+    </style>
+    <div class="flex flex-col gap-2">
+      <strong class="text-2xl">Cette page web nécessite JavaScript
+        pour fonctionner
+        correctement.</strong>
+      <p>Vous pouvez activer JavaScript dans les paramètres de votre navigateur.</p>
+      <p>Si vous avez besoin d'aide, vous pouvez cette page d' aide <a
+          href="https://www.enable-javascript.com/fr/" class="underline " target="_blank"
+          rel="noopener noreferrer">page d'activation de JavaScript</a>.
+      </p>
+    </div>
+  </noscript>
+  <app-root class="flex flex-col min-h-screen noscript:hidden"></app-root>
 </body>
 
 </html>
