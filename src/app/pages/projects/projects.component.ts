@@ -10,15 +10,10 @@ import { Project } from 'src/app/interfaces/project';
   styleUrls: ['./projects.component.scss'],
   animations: [
     trigger('fade', [
-      transition('void => *', [
-        style({ opacity: 0 }),
-        animate(100)
-      ]),
-      transition('* => void', [
-        animate(100, style({ opacity: 0 }))
-      ])
-    ])
-  ]
+      transition('void => *', [style({ opacity: 0 }), animate(100)]),
+      transition('* => void', [animate(100, style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class ProjectsComponent implements OnInit {
   projects = projects;
@@ -37,12 +32,12 @@ export class ProjectsComponent implements OnInit {
     return `assets/projects/${name.toLowerCase().replace(/ /g, '_')}.webp`;
   }
 
-  selectProject(project: Project): void {
+  openModal(project: Project): void {
     this.selectedProject = project;
     document.body.style.overflow = 'hidden';
   }
 
-  unselectProject(): void {
+  closeModal(): void {
     this.selectedProject = null;
     document.body.style.overflow = 'auto';
   }
