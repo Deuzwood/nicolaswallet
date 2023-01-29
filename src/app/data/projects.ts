@@ -108,7 +108,7 @@ export const projects: Project[] = [
   },
   {
     date: '2022-02-01T00:00:00.000Z',
-    tags: ['vuejs', 'firebase'],
+    tags: ['vuejs', 'firebase', 'ulco'],
     links: [
       'https://brainfast-application.web.app/#/',
       'https://play.google.com/store/apps/details?id=app.web.brainfast_application.twa',
@@ -119,7 +119,7 @@ export const projects: Project[] = [
   },
   {
     date: '2021-06-01T00:00:00.000Z',
-    tags: ['python', 'yolo', 'opencv', 'tensorflow', 'keras'],
+    tags: ['python', 'yolo', 'opencv', 'tensorflow', 'keras', 'ulco'],
     links: ['https://github.com/Deuzwood/minimap-analyser'],
     maintained: false,
     name: 'Minimap Analyser',
