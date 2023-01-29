@@ -140,4 +140,24 @@ export const tags = [
     description: 'Plateforme de traduction collaborative',
     link: 'https://crowdin.com/',
   },
+  {
+    name: 'Python',
+    description: '',
+    link: 'https://www.python.org/',
+  },
+  {
+    name: 'Tensorflow',
+    description: '',
+    link: 'https://www.tensorflow.org/',
+  },
+  {
+    name: 'Keras',
+    description: '',
+    link: 'https://keras.io/',
+  },
+  {
+    name: 'OpenCV',
+    description: '',
+    link: 'https://opencv.org/',
+  },
 ];

@@ -32,7 +32,8 @@ export const projects: Project[] = [
     tags: ['nodejs', 'ejs', 'threejs', 'socket.io', 'ulco'],
     maintained: false,
     name: 'Flight Fighter',
-    description: 'Jeu avec Three.JS et Socket.io(). Jeu de combat arcade aérien.',
+    description:
+      'Jeu avec Three.JS et Socket.io(). Jeu de combat arcade aérien.',
     links: [],
   },
   {
@@ -82,7 +83,8 @@ export const projects: Project[] = [
     links: ['https://github.com/Deuzwood/vroom'],
     maintained: false,
     name: 'Vroom',
-    description: 'Petit jeu de voiture avec Three.JS et Socket.io(). Il est aussi possible de créer ses propres cartes via un éditeur, et chaque carte dispose d’un salon afin de pouvoir jouer avec ses amis.',	
+    description:
+      'Petit jeu de voiture avec Three.JS et Socket.io(). Il est aussi possible de créer ses propres cartes via un éditeur, et chaque carte dispose d’un salon afin de pouvoir jouer avec ses amis.',
   },
   {
     date: '2021-09-01T00:00:00.000Z',
@@ -114,5 +116,14 @@ export const projects: Project[] = [
     maintained: false,
     name: 'Brain Fast',
     description: 'Application VueJS',
+  },
+  {
+    date: '2021-06-01T00:00:00.000Z',
+    tags: ['python', 'yolo', 'opencv', 'tensorflow', 'keras'],
+    links: ['https://github.com/Deuzwood/minimap-analyser'],
+    maintained: false,
+    name: 'Minimap Analyser',
+    description:
+      'Application Python qui permet de détecter les unités sur la minimap d’un jeu vidéo. (League of Legends). Nous avons utilisé YOLOv3 pour la détection, entraîné sur un dataset de 6000 images. Le dataset a été créé grâce à OpenCV. Ce projet a été réalisé en binôme.',
   },
 ];
