@@ -126,4 +126,13 @@ export const projects: Project[] = [
     description:
       'Application Python qui permet de détecter les unités sur la minimap d’un jeu vidéo. (League of Legends). Nous avons utilisé YOLOv3 pour la détection, entraîné sur un dataset de 6000 images. Le dataset a été créé grâce à OpenCV. Ce projet a été réalisé en binôme.',
   },
+  {
+    date: '2023-01-30T00:00:00.000Z',
+    tags: ['wcag 2.2', 'accessibility', 'python'],
+    links: ['https://deuzwood.github.io/small-color-work/'],
+    maintained: true,
+    name: 'Small Color Work',
+    description:
+      'Script Python qui permet de connaître la meilleure couleur pour un texte en fonction de la couleur de fond selon une liste de couleurs. Les données sont disponibles depuis un page web, afin de constater les résultats. Réalisé initialement en quelques heures pour la curiosité.',
+  },
 ];
