@@ -1,5 +1,5 @@
 nav a {
-  @apply hover:text-slate-300;
+  @apply text-slate-200 hover:text-white;
 
   &.active {
     @apply text-primary;
