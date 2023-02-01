@@ -10,6 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import { BadgeComponent } from './components/badge/badge.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIconsModule } from '@ng-icons/core';
+import { NgParticlesModule } from 'ng-particles';
 import { icons } from './data/icons';
 
 registerLocaleData(localeFr, 'fr-FR');
@@ -25,6 +26,7 @@ registerLocaleData(localeFr, 'fr-FR');
     BrowserModule,
     NgIconsModule.withIcons(icons),
     BrowserAnimationsModule,
+    NgParticlesModule,
     AppRoutingModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],

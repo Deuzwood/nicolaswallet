@@ -1,7 +1,16 @@
 nav a {
-  @apply text-slate-200 hover:text-white;
+  @apply text-slate-200 hover:text-white text-lg font-semibold;
+  @apply  hover:bg-gray-700 hover:text-white flex items-center px-2 py-2 font-medium rounded-md;
+
+  & svg {
+    @apply text-gray-400 group-hover:text-gray-300;
+  }
+
+  &.active svg {
+    @apply text-slate-300;
+  }
 
   &.active {
-    @apply text-primary;
+    @apply border border-primary text-gray-300 bg-gray-900 ;
   }
 }

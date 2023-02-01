@@ -21,8 +21,11 @@
     "@ng-icons/core": "^23.1.0",
     "@ng-icons/material-icons": "^23.1.0",
     "@ng-icons/simple-icons": "^23.1.0",
+    "ng-particles": "^3.8.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "tsparticles": "^2.8.0",
+    "tsparticles-engine": "^2.8.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

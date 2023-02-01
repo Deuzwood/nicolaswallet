@@ -9,8 +9,8 @@ This is a list of things I want to do on this website (in no particular order) :
 
 - [ ] Add localization
 - [x] Add projects
-- [ ] Improve navigation design (sidebar ?)
-- [ ] Use particles.js like the old website
+- [x] Improve navigation design (sidebar ?)
+- [x] Use particles.js like the old website
 - [ ] Improve tags
   - [x] Create a tag component
   - [ ] Make them clickable (or add tooltips)
