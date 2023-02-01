@@ -5,13 +5,12 @@ import { Tag } from 'src/app/interfaces/tag';
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.scss']
+  styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent {
   @Input() name!: string;
 
   tags: Tag[] = tags;
-
 
   format(text: string): string {
     return text.toLowerCase().replace(/ /g, '');
@@ -19,10 +18,8 @@ export class BadgeComponent {
 
   getTag(): Tag {
     return (
-      this.tags.find(
-        (t) =>
-          this.format(t.name) === this.format(this.name)
-      ) || ({ name: this.name } as Tag)
+      this.tags.find((t) => this.format(t.name) === this.format(this.name)) ||
+      ({ name: this.name } as Tag)
     );
   }
 }

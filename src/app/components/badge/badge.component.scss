@@ -71,7 +71,7 @@ span[class^="badge-"] {
   .badge-#{$name} {
     background: $color;
     // set color depending on background
-    @if $name == 'apigoogle' {
+    @if type-of($color) != 'color' {
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

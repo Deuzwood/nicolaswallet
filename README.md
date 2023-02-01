@@ -17,8 +17,8 @@ This is a list of things I want to do on this website (in no particular order) :
   - [x] Use components for tags
   - [x] Use scss for tags
 - [ ] Add ng-icons
-  - [ ] Replace current icons (resume)
+  - [x] Replace current icons (resume)
   - [ ] Add icons for projects
 - [ ] Improve contact (copy to clipboard, etc.)
-- [ ] Add 404 page
+- [x] ~~Add a 404 page~~ (redirect instead)
 - [ ] Add a blog (maybe if I have time to write something)
