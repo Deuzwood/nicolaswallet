@@ -15,8 +15,8 @@
         <div class="md:shrink-0">
           <img
             class="h-64 w-full object-cover md:h-full md:w-64 lg:w-96 md:border-r-2 cursor-pointer hover:opacity-75 hover:shadow-lg"
-            [src]="getImagePath(project.name)" (click)="openModal(project)"
-            alt="{{ project.name }}">
+            [src]="getImagePath(project.name)" (click)="openModal(project)" tabindex="0"
+            (keyup.enter)="openModal(project)" alt="{{ project.name }}">
         </div>
 
         <div class="p-8 w-full">

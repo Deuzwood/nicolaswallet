@@ -11,6 +11,6 @@ nav a {
   }
 
   &.active {
-    @apply border border-primary text-gray-300 bg-gray-900 ;
+    @apply border border-primary text-gray-300 bg-gray-900 bg-opacity-50 ;
   }
 }

@@ -12,6 +12,7 @@ import { projects } from './data/projects';
 export class AppComponent {
   particlesOptions = particlesOptions;
   projectsNumber = projects.length;
+  open = false;
 
   particlesLoaded(): void {}
 

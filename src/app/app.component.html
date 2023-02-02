@@ -1,47 +1,48 @@
-<div class="flex flex-row min-h-screen w-full bg-secondary text-white">
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-secondary text-white">
 
   <aside
-    class="border-r-2 border-primary h-screen sticky top-0 flex flex-col w-60 -translate-x-full transform transition-transform duration-150 ease-in md:translate-x-0 md:shadow-md">
-    <div class="my-4 w-full flex flex-col gap-4 pt-8 text-center">
-      <img src="assets/nicolas-wallet.webp" alt
-        class="rounded-full transition-size w-24 h-24 sm:w-28 sm:h-28 place-self-center">
-      <span class="text-xl font-bold tracking-widest"> <span class="text-primary">Nicolas</span>
-        Wallet </span>
-    </div>
-    <div class="my-4 flex-1 ">
-      <div class="flex-1 flex flex-col min-h-0">
-        <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+    class="md:border-r-2 md:border-primary md:h-screen md:sticky md:top-0 flex flex-col w-full md:w-60 flex-shrink-0 md:translate-x-0"
+    role="presentation">
+    <ng-particles [options]="particlesOptions" [particlesInit]="particlesInit"
+      class="-z-10"></ng-particles>
 
-          <nav class="mt-5 flex-1 px-2 space-y-1" aria-label="Sidebar">
+    <div
+      class="hidden md:flex flex-shrink-0 p-2 md:px-8 md:py-4 flex-row items-center justify-between">
+      <div class="md:my-4 md:w-full flex md:flex-col gap-4 md:pt-8 text-center">
 
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              <svg class="text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              <span class="flex-1">Accueil</span>
-            </a>
-            <a routerLink="/projects" routerLinkActive="active">
-              <svg class="text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 
-                2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-              </svg>
-              <span class="flex-1"> Projets </span>
-
-              <span
-                class="border border-white group-hover:bg-gray-800 ml-3 inline-block py-0.5 px-3 text-xs font-medium rounded-full">
-                {{ projectsNumber }} </span>
-            </a>
-          </nav>
-        </div>
+        <img src="assets/nicolas-wallet.webp" alt
+          class="shadow-[0_0px_25px_0px_rgba(255,255,255,0.1)] rounded-full transition-size w-20 h-20 sm:w-32 sm:h-32 place-self-center">
+        <span class="md:text-xl font-bold tracking-widest"> <span
+            class="text-primary">Nicolas</span>
+          Wallet </span>
       </div>
-
     </div>
-    <footer class="flex bg-secondary p-4 w-full">
+
+    <nav class="md:mt-8 mt-5 flex gap-4 md:block md:flex-1 px-4 space-y-2" aria-label="Sidebar">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <svg class="text-gray-300 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span class="flex-1">Accueil</span>
+      </a>
+      <a routerLink="/projects" routerLinkActive="active">
+        <svg class="text-gray-400 group-hover:text-gray-300 mr-3 flex-shrink-0 h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 
+                2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+        </svg>
+        <span class="flex-1">Projets</span>
+
+        <span
+          class="border border-white group-hover:bg-gray-800 ml-3 inline-block py-0.5 px-2 text-xs font-medium rounded-full">
+          {{ projectsNumber }} </span>
+      </a>
+    </nav>
+
+    <footer class="hidden md:flex p-4 w-full" role="contentinfo">
       <div class="container mx-auto">
         <div class="flex gap-4 justify-end">
           <a href="https://www.linkedin.com/in/nicolas-wallet/"
@@ -55,15 +56,11 @@
         </div>
       </div>
     </footer>
-
-    <ng-particles [options]="particlesOptions" [particlesInit]="particlesInit"></ng-particles>
   </aside>
 
-  <main class="-ml-60 flex flex-grow flex-col transition-all duration-150 ease-in md:ml-0">
-    <div class="flex h-full items-center justify-center font-semibold shadow-md">
-      <main class="flex-1 text-white">
-        <router-outlet></router-outlet>
-      </main>
+  <main class="flex w-full items-center justify-center md:text-xl font-semibold shadow-md">
+    <div class="flex-1">
+      <router-outlet></router-outlet>
     </div>
   </main>
 </div>

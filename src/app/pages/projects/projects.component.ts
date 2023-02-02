@@ -1,5 +1,5 @@
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { projects } from 'src/app/data/projects';
 import { tags } from 'src/app/data/tags';
 import { Project } from 'src/app/interfaces/project';
@@ -19,6 +19,17 @@ export class ProjectsComponent implements OnInit {
   projects = projects;
   tags = tags;
   selectedProject: Project | null = null;
+
+  @HostListener('window:keydown', ['$event'])
+  keyEvent(event: KeyboardEvent): void {
+    if (event.key === 'Escape') {
+      this.closeModal();
+    } else if (event.key === 'ArrowRight') {
+      this.nextProject();
+    } else if (event.key === 'ArrowLeft') {
+      this.previousProject();
+    }
+  }
 
   constructor() {}
 
@@ -40,5 +51,21 @@ export class ProjectsComponent implements OnInit {
   closeModal(): void {
     this.selectedProject = null;
     document.body.style.overflow = 'auto';
+  }
+
+  nextProject(): void {
+    if (this.projects.length) {
+      const index = this.projects.indexOf(this.selectedProject!);
+      if (index < this.projects.length - 1) {
+        this.selectedProject = this.projects[index + 1];
+      }
+    }
+  }
+
+  previousProject(): void {
+    const index = this.projects.indexOf(this.selectedProject!);
+    if (index > 0) {
+      this.selectedProject = this.projects[index - 1];
+    }
   }
 }
