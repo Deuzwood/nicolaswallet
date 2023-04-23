@@ -1,6 +1,6 @@
 nav a {
   @apply text-slate-200 hover:text-white text-lg font-semibold;
-  @apply  hover:bg-gray-700 hover:text-white flex items-center px-2 py-2 font-medium rounded-md;
+  @apply hover:bg-gray-700 hover:text-white flex items-center px-2 py-2 font-medium rounded-md;
 
   & svg {
     @apply text-gray-400 group-hover:text-gray-300;

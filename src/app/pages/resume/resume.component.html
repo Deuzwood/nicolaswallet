@@ -2,7 +2,7 @@
   class="container mx-auto p-8 flex flex-col divide-y-2 divide-primary gap-4 divide-opacity-50 text-lg">
 
   <section class="py-4 px-4 sm:px-12 transition-spacing">
-    <h1 class="text-2xl font-semibold text-white">Développeur
+    <h1 class="text-3xl font-semibold text-white">Développeur
       <span class="text-primary">full
         stack</span>,<br>
       <span class="text-primary">Consultant</span> applications chez
@@ -15,49 +15,38 @@
   </section>
 
   <section class="py-4 px-4 sm:px-12 transition-spacing">
-    <h2 class="text-2xl py-2 font-semibold">Informations</h2>
-    <div class="ml-8 flex flex-col gap-y-2">
-      <div class="flex gap-2">
-        <ng-icon name="matPersonOutlineOutline" size="1.4rem"></ng-icon>
-        <p>
-          23 ans
-        </p>
-      </div>
-      <p class="flex gap-2">
-        <ng-icon name="matLocationOnOutline" size="1.4rem"></ng-icon>
-        Lille 59000, FRANCE
-      </p>
-      <p class="flex gap-2">
-        <ng-icon name="matEmailOutline" size="1.4rem"></ng-icon>
-        <span>contact<span class="px-1">[at]</span>nicolaswallet.fr</span>
-    </div>
-  </section>
-
-  <section class="py-4 px-4 sm:px-12 transition-spacing">
     <h2 class="text-2xl py-2 font-semibold">Expériences</h2>
 
-    <div class="border-l-2 border-primary px-2"><small
-        class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
-        septembre
-        2022</small>
-      <p class="font-semibold">Sogeti</p>
-      <p class="ml-4">Consultant Applications</p>
-      <p class="ml-4">
-        <app-badge *ngFor="let tech of ['Angular', 'Java', 'Spring', 'PostgreSQL', 'Keycloak']"
-          [name]="tech"></app-badge>
-      </p>
+    <div class="flex gap-4 divide-x-2 divide-primary my-2">
+      <div>
+        <h3 class="font-semibold text-white">Sogeti</h3>
+        <p class="text-grey-300 text-sm">{{timeSpent.sogeti}}</p>
+      </div>
+
+      <div class="flex-1 pl-4 pr-2">
+        <div><small
+          class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
+          septembre
+          2022</small>
+          <p>Consultant Applications</p>
+          <p>
+            <app-badge *ngFor="let tech of ['Angular', 'Java', 'Spring', 'PostgreSQL', 'Keycloak']"
+              [name]="tech"></app-badge>
+          </p>
+        </div>
+  
+        <div><small class="float-right uppercase text-xs">début avril
+            - fin août 2022
+          </small>
+          <p>Stage de fin d'étude</p>
+          <p>
+            <app-badge *ngFor="let tech of ['Angular', 'Ionic', 'Java', 'Spring']"
+              [name]="tech"></app-badge>
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="px-2 mt-2"><small class="float-right uppercase text-xs">début avril
-        - fin août 2022
-      </small>
-      <p class="font-semibold">Sogeti</p>
-      <p class="ml-4">Stage de fin d'étude</p>
-      <p class="ml-4">
-        <app-badge *ngFor="let tech of ['Angular', 'Ionic', 'Java', 'Spring']"
-          [name]="tech"></app-badge>
-      </p>
-    </div>
   </section>
 
   <section class="py-4 px-4 sm:px-12 transition-spacing">
