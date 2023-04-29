@@ -18,11 +18,20 @@ jobs:
           npm install
           npm run build
 
-      - name: 📂 Sync files
+      - name: 📂 Deploy on nicolaswallet.fr
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.server }}
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
+          server-dir: ${{ secrets.dir }}
+          local-dir: ./dist/
+
+      - name: 📂 Deploy on nicolas-wallet.fr
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.server_secondary }}
+          username: ${{ secrets.username_secondary }}
+          password: ${{ secrets.password_secondary }}
           server-dir: ${{ secrets.dir }}
           local-dir: ./dist/
