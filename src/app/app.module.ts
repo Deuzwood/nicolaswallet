@@ -12,15 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIconsModule } from '@ng-icons/core';
 import { NgParticlesModule } from 'ng-particles';
 import { icons } from './data/icons';
+import { PostsComponent } from './pages/posts/posts.component';
+import { ViewComponent } from './app/pages/posts/view/view.component';
 
 registerLocaleData(localeFr, 'fr-FR');
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResumeComponent,
-    ProjectsComponent,
     BadgeComponent,
+    PostsComponent,
+    ProjectsComponent,
+    ResumeComponent,
+    ViewComponent,
   ],
   imports: [
     BrowserModule,

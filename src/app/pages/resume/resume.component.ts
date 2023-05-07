@@ -7,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  timeSpent : any = {
-    sogeti : null
+  timeSpent: any = {
+    sogeti: null,
+    aae: null
   }
 
   constructor() { }
 
   ngOnInit(): void {
-    this.timeSpent.sogeti = this.formatFrom(new Date('2022-04-01'));
+      this.timeSpent.sogeti = this.formatFrom(new Date('2022-04-01'));
+      this.timeSpent.aae = this.formatFrom(new Date('2023-07-01'));
   }
 
   formatFrom(fromDate : Date): string {

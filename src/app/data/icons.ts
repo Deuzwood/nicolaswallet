@@ -1,5 +1,8 @@
 import {
+  matArticleOutline,
   matEmailOutline,
+  matFolderOutline,
+  matHomeOutline,
   matLocationOnOutline,
   matOpenInNewOutline,
   matPersonOutlineOutline,
@@ -12,6 +15,9 @@ export const icons = {
   matPersonOutlineOutline,
   matEmailOutline,
   matOpenInNewOutline,
+  matHomeOutline,
+  matFolderOutline,
+  matArticleOutline,
   // Simple icons
   simpleGithub,
   simpleLinkedin,

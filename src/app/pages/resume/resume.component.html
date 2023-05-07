@@ -14,16 +14,36 @@
     </h1>
   </section>
 
-  <section class="py-4 px-4 sm:px-12 transition-spacing">
+  <section class="flex flex-col gap-4 py-4 px-4 sm:px-12 transition-spacing">
     <h2 class="text-2xl py-2 font-semibold">Expériences</h2>
 
-    <div class="flex gap-4 divide-x-2 divide-primary my-2">
+    <div class="grid grid-cols-5 gap-4 divide-x-2 divide-primary my-2">
+      <div class="">
+        <h3 class="font-semibold text-white">Armée de l'Air et de l'Espace</h3>
+        <p class="text-grey-300 text-sm">{{timeSpent.aae}}</p>
+      </div>
+
+      <div class="col-span-4 pl-4 pr-2">
+        <div><small
+          class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
+          Aout
+          2023</small>
+          <p>Aspirant</p>
+          <p>
+            <app-badge *ngFor="let tech of ['Formation militaire initiale']"
+              [name]="tech"></app-badge>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-5  gap-4 divide-x-2 divide-primary my-2">
       <div>
         <h3 class="font-semibold text-white">Sogeti</h3>
         <p class="text-grey-300 text-sm">{{timeSpent.sogeti}}</p>
       </div>
 
-      <div class="flex-1 pl-4 pr-2">
+      <div class="col-span-4 pl-4 pr-2">
         <div><small
           class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
           septembre

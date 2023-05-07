@@ -3,6 +3,7 @@ import { loadFull } from 'tsparticles';
 import { Container, Engine } from 'tsparticles-engine';
 import { particlesOptions } from './data/particles';
 import { projects } from './data/projects';
+import posts from 'src/assets/posts/posts.json';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { projects } from './data/projects';
 export class AppComponent {
   particlesOptions = particlesOptions;
   projectsNumber = projects.length;
+  postsNumber = posts.length;
   open = false;
 
   particlesLoaded(): void {}
