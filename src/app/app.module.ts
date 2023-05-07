@@ -1,19 +1,19 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ResumeComponent } from './pages/resume/resume.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
-import { BadgeComponent } from './components/badge/badge.component';
+import localeFr from '@angular/common/locales/fr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIconsModule } from '@ng-icons/core';
 import { NgParticlesModule } from 'ng-particles';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BadgeComponent } from './components/badge/badge.component';
 import { icons } from './data/icons';
 import { PostsComponent } from './pages/posts/posts.component';
-import { ViewComponent } from './app/pages/posts/view/view.component';
+import { ViewComponent } from './pages/posts/view/view.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ResumeComponent } from './pages/resume/resume.component';
 
 registerLocaleData(localeFr, 'fr-FR');
 
