@@ -4,13 +4,7 @@
   <section class="py-4 px-4 sm:px-12 transition-spacing">
     <h1 class="text-3xl font-semibold text-white">Développeur
       <span class="text-primary">full
-        stack</span>,<br>
-      <span class="text-primary">Consultant</span> applications chez
-      <a href="https://www.fr.sogeti.com/" target="_blank" rel="noopener noreferrer"
-        class="text-gray-300 underline hover:text-white"
-        title="Sogeti France | Gérez la transformation numérique de votre entreprise avec Sogeti - nouvelle fenêtre">Sogeti
-        <ng-icon name="matOpenInNewOutline" size="1rem"></ng-icon>
-      </a>.
+        stack</span>
     </h1>
   </section>
 
@@ -18,22 +12,19 @@
     <h2 class="text-2xl py-2 font-semibold">Expériences</h2>
 
     <div class="grid grid-cols-5 gap-4 divide-x-2 divide-primary my-2">
-      <div class="">
+      <div>
         <h3 class="font-semibold text-white">Armée de l'Air et de l'Espace</h3>
         <p class="text-grey-300 text-sm">{{timeSpent.aae}}</p>
       </div>
 
       <div class="col-span-4 pl-4 pr-2">
-        <div><small
-          class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
-          Aout
-          2023</small>
-          <p>Aspirant</p>
-          <p>
-            <app-badge *ngFor="let tech of ['Formation militaire initiale']"
-              [name]="tech"></app-badge>
-          </p>
+        <div>
+          <small class="active float-right uppercase text-xs">
+            Depuis septembre 2023</small>
+          <p>Officier sous contrat - Officier des systèmes d'information et de communication</p>
         </div>
+        <app-badge *ngFor="let tech of ['Formation militaire initiale']"
+          [name]="tech"></app-badge>
       </div>
     </div>
 
@@ -45,9 +36,8 @@
 
       <div class="col-span-4 pl-4 pr-2">
         <div><small
-          class="float-right rounded-full px-2 border border-primary uppercase text-xs">Depuis
-          septembre
-          2022</small>
+          class="float-right uppercase text-xs">
+          septembre 2022 - août 2023</small>
           <p>Consultant Applications</p>
           <p>
             <app-badge *ngFor="let tech of ['Angular', 'Java', 'Spring', 'PostgreSQL', 'Keycloak']"
@@ -55,8 +45,8 @@
           </p>
         </div>
   
-        <div><small class="float-right uppercase text-xs">début avril
-            - fin août 2022
+        <div><small class="float-right uppercase text-xs">avril
+            - août 2022
           </small>
           <p>Stage de fin d'étude</p>
           <p>
