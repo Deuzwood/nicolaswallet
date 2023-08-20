@@ -1,14 +1,17 @@
 ---
-layout: post
 title: Postgresql et récursivité
-published-on: 2023-05-07
+description: Recherche dans un graphe dirigé
+tags: Postgresql
+published: 2023-31-08
 ---
 
-# Postgrepostgresql, recurive and graph
+# Postgresql, récursivité et graphe
+
+Voici un exemple pas à pas de navigation dans un graphe avec Postgresql. Il est préférable de tester les commandes en même temps pour mieux visualiser.
 
 Soit une base de données avec une table `node` et une table `edge`:
 
-```postgresql
+```plsql
     CREATE TABLE node (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL
@@ -21,8 +24,9 @@ Soit une base de données avec une table `node` et une table `edge`:
     );
 ```
 
-On peut créer un arbre avec des noeuds et des arêtes:
-```postgresql
+On peut créer un arbre avec des nœuds et des arêtes :
+
+```plsql
 INSERT INTO node (name) VALUES ('A');
 INSERT INTO node (name) VALUES ('B');
 INSERT INTO node (name) VALUES ('C');
@@ -49,9 +53,9 @@ graph TD;
     C((C)) -- 5 --> F((F));
 ```
 
-A partir d'un cet arbre, on peut créer une vue récursive pour récupérer tous les noeuds enfants ou parent d'un noeud donné:
+À partir d'un cet arbre, on peut créer une vue récursive pour récupérer tous les nœuds enfants ou parent d'un nœud donné :
 
-```postgresql
+```plsql
 CREATE OR REPLACE VIEW node_tree AS
 WITH RECURSIVE node_tree AS (
     SELECT id, name, id AS parent_id, 0 AS level
@@ -66,9 +70,9 @@ SELECT * FROM node_tree;
 ```
 
 
-Maintenant transformons cet arbre en graphe orienté, en ajoutant simplement une relation cyclique entre les noeuds:
+Maintenant, transformons cet arbre en graphe orienté, en ajoutant simplement une relation cyclique entre les nœuds :
 
-```postgresql
+```plsql
 INSERT INTO edge (parent_id, child_id) VALUES (4, 1); -- D -> A
 ```
     
@@ -82,11 +86,12 @@ graph TD;
     D((D)) -- 6 --> A((A));
 ```
 
+
 Dès lors, s'il y a un cycle dans le graphe, la vue `node_tree` ne fonctionnera plus, car elle est récursive et ne peut pas gérer les cycles.
 
-Dans ce cas, on peut mémoïser les noeuds déjà visités, et ne pas les visiter une deuxième fois:
+Dans ce cas, on peut mémoïser les nœuds déjà visités, et ne pas les visiter une deuxième fois :
 
-```postgresql
+```plsql
 CREATE OR REPLACE VIEW node_tree AS
 WITH RECURSIVE node_tree AS (
     SELECT id, name, id AS parent_id, 0 AS level, path

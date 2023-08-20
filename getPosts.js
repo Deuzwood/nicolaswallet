@@ -9,13 +9,17 @@ function getMetadata(fileName) {
     const metadataObject = { fileName };
     metadata.forEach((item) => {
         const [key, value] = item.split(':');
-        metadataObject[key.trim()] = value.trim();
+        if(key === 'tags') {
+            metadataObject[key.trim()] = value.split(',').map(el => el.trim());
+        } else {
+            metadataObject[key.trim()] = value.trim();
+        }
     });
     return metadataObject;
 }
 
 fs.readdirSync(postsFolder).forEach((file) => {
-    if (file.endsWith('.md')) {
+    if (file.endsWith('.md') && !file.startsWith('WIP')) {
         try {
             data.push(getMetadata(file));
         } catch (err) {
@@ -26,7 +30,6 @@ fs.readdirSync(postsFolder).forEach((file) => {
 
 try {
     fs.writeFileSync(postsFolder + '/posts.json', JSON.stringify(data));
-    // fichier écrit avec succès
 } catch (err) {
     console.error(err);
 }

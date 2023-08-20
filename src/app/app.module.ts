@@ -14,6 +14,8 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { ViewComponent } from './pages/posts/view/view.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 registerLocaleData(localeFr, 'fr-FR');
 
@@ -28,6 +30,8 @@ registerLocaleData(localeFr, 'fr-FR');
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    MarkdownModule.forRoot(),
     NgIconsModule.withIcons(icons),
     BrowserAnimationsModule,
     NgParticlesModule,

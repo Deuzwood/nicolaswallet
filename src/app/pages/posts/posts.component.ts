@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from 'src/app/interfaces/post';
+import { PostInfo } from 'src/app/interfaces/postInfo';
 import data from 'src/assets/posts/posts.json';
 
 @Component({
@@ -8,5 +8,9 @@ import data from 'src/assets/posts/posts.json';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent {
-  posts: any[] = data;
+  posts: PostInfo[] = data;
+
+  getLink(title: string) {
+    return title.toLocaleLowerCase().replace(/ /g, '-');
+  }
 }
